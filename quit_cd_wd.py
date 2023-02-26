@@ -3,7 +3,7 @@ from ranger.api.commands import *
 import os
 
 def save_wd(command):
-    with open(os.path.expanduser('~/.ranger_quit_cd_wd'), 'w') as f:
+    with open(os.path.expanduser('~/.cache/ranger/.ranger_quit_cd_wd'), 'w') as f:
         f.write(command.fm.thisdir.path);
 
 class quit_cd_wd(Command):

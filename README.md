@@ -8,29 +8,29 @@ Sometime you need to open a terminal on ranger working directory to do some jobs
 
 1.  Copy `quit_cd_wd.py` to `${XDG_CONFIG_HOME}/ranger/plugins`.
 
-    ```sh
-    curl -fLo ${XDG_CONFIG_HOME:-~/.config}/ranger/plugins/quit_cd_wd.py --create-dirs \
-            https://raw.githubusercontent.com/JohanChane/ranger-quit_cd_wd/main/quit_cd_wd.py
-    ```
+	```sh
+	curl -fLo ${XDG_CONFIG_HOME:-~/.config}/ranger/plugins/quit_cd_wd.py --create-dirs \
+			https://raw.githubusercontent.com/JohanChane/ranger-quit_cd_wd/main/quit_cd_wd.py
+	```
 
 3.  Add the following mapping to the `rc.conf`
 
-    ```
-    map     x quit_cd_wd
-    map     X quitall_cd_wd
-    ```
+	```
+	map     x quit_cd_wd
+	map     X quitall_cd_wd
+	```
 
 3.  Add the following to your shell rcfile (e.g. `.bashrc, .zshrc`)
 
-    ```sh
-    function ranger_func {
-        ranger $*
-        local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
-        if [ -s "$quit_cd_wd_file" ]; then
-            cd "$(cat $quit_cd_wd_file)"
-            true > "$quit_cd_wd_file"
-        fi
-    }
+	```sh
+	function ranger_func {
+		ranger $*
+		local quit_cd_wd_file="$HOME/.cache/ranger/.ranger_quit_cd_wd"
+		if [ -s "$quit_cd_wd_file" ]; then
+			cd "$(cat $quit_cd_wd_file)"
+			true > "$quit_cd_wd_file"
+		fi
+	}
 
-    alias rn='ranger_func'
-    ```
+	alias rn='ranger_func'
+	```
