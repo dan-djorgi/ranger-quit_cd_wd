@@ -10,7 +10,7 @@ Sometime you need to open a terminal on ranger working directory to do some jobs
 
 	```sh
 	curl -fLo ${XDG_CONFIG_HOME:-~/.config}/ranger/plugins/quit_cd_wd.py --create-dirs \
-			https://raw.githubusercontent.com/JohanChane/ranger-quit_cd_wd/main/quit_cd_wd.py
+			https://raw.githubusercontent.com/dan-djorgi/ranger-quit_cd_wd/main/quit_cd_wd.py
 	```
 
 3.  Add the following mapping to the `rc.conf`
